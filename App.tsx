@@ -6,10 +6,11 @@
  *
  * @format
  */
+import 'react-native-gesture-handler';
 
 import React from 'react';
-import {StyleSheet} from 'react-native';
 
+import {Text, View} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Feed from './src/bottom_tabs/Feed';
 import Search from './src/bottom_tabs/Search';
@@ -19,8 +20,13 @@ import Notifications from './src/bottom_tabs/Notifications';
 import Messages from './src/bottom_tabs/Messages';
 import {NavigationContainer} from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon2 from 'react-native-vector-icons/Ionicons';
+import CustomDrawerContent from './src/components/DrawerContent';
 const Tab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
 
 function App(): JSX.Element {
   const MyTabs = () => {
@@ -122,31 +128,27 @@ function App(): JSX.Element {
       </Tab.Navigator>
     );
   };
+  function SideMenuDrawer() {
+    return (
+      <View>
+        <Text>Drawer View</Text>
+      </View>
+    );
+  }
 
   return (
     <NavigationContainer>
-      <MyTabs />
+      <Drawer.Navigator
+        initialRouteName="Tabs"
+        screenOptions={{
+          drawerType: 'front',
+          headerShown: false,
+        }}
+        drawerContent={props => <CustomDrawerContent {...props} />}>
+        <Drawer.Screen name="AppBottomStack" component={MyTabs} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
 export default App;

@@ -1,3 +1,35 @@
+interface Tweet {
+  id: number;
+  username: string;
+  content: string;
+  media?: string;
+  profileImage: string;
+  timestamp: Date;
+  likes: number;
+  retweets: number;
+  userProfile: UserProfile;
+  comments: Comment[];
+  hashtags: Hashtag[];
+}
+interface Hashtag {
+  id: number;
+  tag: string;
+}
+
+interface Comment {
+  id: number;
+  username: string;
+  content: string;
+  timestamp: Date;
+}
+
+interface UserProfile {
+  id: number;
+  name: string;
+  bio: string;
+  profileImage: string;
+}
+
 export const tweets: Tweet[] = [
   {
     id: 1,
@@ -29,6 +61,16 @@ export const tweets: Tweet[] = [
         username: 'Alice',
         content: 'Nice post!',
         timestamp: new Date(),
+      },
+    ],
+    hashtags: [
+      {
+        id: 2,
+        tag: 'funny',
+      },
+      {
+        id: 2,
+        tag: 'enjoyed',
       },
     ],
   },
@@ -64,6 +106,7 @@ export const tweets: Tweet[] = [
         timestamp: new Date(),
       },
     ],
+    hashtags: [],
   },
   {
     id: 3,
@@ -82,6 +125,7 @@ export const tweets: Tweet[] = [
         'https://images.unsplash.com/photo-1608889175123-8ee362201f81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80',
     },
     comments: [],
+    hashtags: [],
   },
   {
     id: 4,
@@ -109,6 +153,7 @@ export const tweets: Tweet[] = [
         timestamp: new Date(),
       },
     ],
+    hashtags: [],
   },
   {
     id: 5,
@@ -125,6 +170,7 @@ export const tweets: Tweet[] = [
       profileImage: 'https://example.com/profile5.jpg',
     },
     comments: [],
+    hashtags: [],
   },
   {
     id: 6,
@@ -145,6 +191,7 @@ export const tweets: Tweet[] = [
         'https://images.unsplash.com/photo-1608889175123-8ee362201f81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80',
     },
     comments: [],
+    hashtags: [],
   },
   {
     id: 7,
@@ -163,6 +210,7 @@ export const tweets: Tweet[] = [
         'https://images.unsplash.com/photo-1608889175250-c3b0c1667d3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80',
     },
     comments: [],
+    hashtags: [],
   },
   {
     id: 8,
@@ -181,6 +229,7 @@ export const tweets: Tweet[] = [
         'https://images.unsplash.com/photo-1608889468310-1e84217c0f8d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80',
     },
     comments: [],
+    hashtags: [],
   },
   {
     id: 9,
@@ -199,6 +248,7 @@ export const tweets: Tweet[] = [
         'https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
     },
     comments: [],
+    hashtags: [],
   },
   {
     id: 10,
@@ -226,5 +276,6 @@ export const tweets: Tweet[] = [
         timestamp: new Date(),
       },
     ],
+    hashtags: [],
   },
 ];

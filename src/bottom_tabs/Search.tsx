@@ -4,7 +4,9 @@ import {StyleSheet, Text, View} from 'react-native';
 const Search = () => {
   return (
     <View style={styles.parent}>
-      <Text>Search</Text>
+      <View>
+        <Text>Search Bar</Text>
+      </View>
     </View>
   );
 };
