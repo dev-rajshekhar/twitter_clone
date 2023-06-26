@@ -1,6 +1,6 @@
-## Twitter Clone
+## Twitter Clone (Work in Progress)
 
-#This is a dummy app for  Twitter Clone. It will use the following thigs
+This is a dummy app for  Twitter Clone. It will use the following things
 - React Navigation
 - React Native Animated
 # ScreenShot
